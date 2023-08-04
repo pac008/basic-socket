@@ -7,8 +7,8 @@ class Sockets {
   socketEvents() {
     this.io.on("connection", (socket) => {
 
-      socket.on("message", (data) => {
-        socket.broadcast.emit("message", data);
+      socket.on("newThank", (newThank) => {
+        socket.broadcast.emit("newThank", newThank);
       });
     });
   }
