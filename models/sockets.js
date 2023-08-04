@@ -6,12 +6,9 @@ class Sockets {
 
   socketEvents() {
     this.io.on("connection", (socket) => {
-      socket.on("msg-to-server", (data) => {
-        console.log(data);
-        this.io.emit("msg-from-server", {
-          msg: "hola desde el server",
-          name: "serer",
-        });
+
+      socket.on("message", (data) => {
+        socket.broadcast.emit("message", data);
       });
     });
   }
