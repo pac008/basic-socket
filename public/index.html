@@ -25,7 +25,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      const socket = io("https://basic-socket.vercel.app/");
+      const socket = io(document.location.origin);
       const buttonPlay = document.querySelector("button");
       const videoElement = document.querySelector("video");
 
